@@ -46,25 +46,26 @@ body
         letter-spacing: 10px
         text-transform: uppercase
         margin-bottom: 10px
-        animation-name: leftToRight                     // применение анимации
-        animation-duration: 2s                      // длительность анимации
-        animation-delay: .5s                       // задержка анимации
+        animation-name: leftToRight // применение анимации
+        animation-duration: 2s // длительность анимации
+        animation-delay: .5s // задержка анимации
         animation-timing-function: ease-in-out
-        backface-visibility: hidden                 // не даёт сайд эффектов анимацииям, типа задней стороны фигуры
+        backface-visibility: hidden // не даёт сайд эффектов анимацииям, типа задней стороны фигуры
     &__secondary
         display: block
         font-size: 40px
         font-weight: 100
         line-height: normal
         letter-spacing: 5px
-        animation-name: rightToLeft                     // применение анимации
-        animation-duration: 2s                      // длительность анимации
-        animation-delay: .5s                        // задержка анима              ции
+        animation-name: rightToLeft // применение анимации
+        animation-duration: 2s // длительность анимации
+        animation-delay: .5s // задержка анима ции
         animation-timing-function: ease-in-out
-        backface-visibility: hidden                 // не даёт сайд эффектов анимацииям, типа задней стороны фигуры
+        backface-visibility: hidden // не даёт сайд эффектов анимацииям, типа задней стороны фигуры
         margin-bottom: 65px
-.btn 
+.btn
     &:link, &:visited
+        position: relative
         border-radius: 50px
         display: inline-block
         text-transform: uppercase
@@ -72,14 +73,29 @@ body
         color: #777777
         padding: 15px 40px
         background: white
-        transition: all .25s             // ддлительность анимаций при ховере и нажатии
-        &:hover                        
-            transform: translateY(-3px)   // добваляет подъём при ховере
+        transition: all .25s                                    // ддлительность анимаций при ховере и нажатии
+        &:hover
+            transform: translateY(-3px)                         // добваляет подъём при ховере
             box-shadow: (0px 4px 4px rgba(0, 0, 0, .3))
+            &::after
+                transform: scaleX(1.45) scaleY(1.9)             // добавляет анимацию псевдоэлементу при ховере
+                opacity: 0
         &:active
-            transform: translateY(-2px)      // добваляет подъём при наажатии
+        transform: translateY(-2px)                             // добваляет подъём при наажатии
             box-shadow: (0px 4px 4px rgba(0, 0, 0, .1))
-        
+    &::after                                                    // псевдоэлемент для анимации взрыва кнопки
+            content: ""
+            background: white
+            width: 100%
+            height: 100%
+            border-radius: 50px
+            display: inline-block
+            position: absolute
+            top: 0
+            left: 0
+            z-index: -1
+            transition: all .3s                                 // длитеьлность анимации взрыва кнопки
+
 @keyframes leftToRight
     0%                                          // настройка анимации
         opacity: 0
