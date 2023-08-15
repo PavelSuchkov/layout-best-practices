@@ -5,7 +5,7 @@
     box-sizing: border-box
 
 body
-    font-family: 'Roboto'
+    font-family: 'Roboto', sans-serif
     font-weight: 400
     color: #777777
     font-size: 16px
@@ -48,8 +48,9 @@ body
         margin-bottom: 10px
         animation-name: leftToRight                     // применение анимации
         animation-duration: 2s                      // длительность анимации
-        animation-delay: 0.5s                       // задержка анимации
+        animation-delay: .5s                       // задержка анимации
         animation-timing-function: ease-in-out
+        backface-visibility: hidden                 // не даёт сайд эффектов анимацииям, типа задней стороны фигуры
     &__secondary
         display: block
         font-size: 40px
@@ -58,9 +59,27 @@ body
         letter-spacing: 5px
         animation-name: rightToLeft                     // применение анимации
         animation-duration: 2s                      // длительность анимации
-        animation-delay: 0.5s                        // задержка анима              ции
+        animation-delay: .5s                        // задержка анима              ции
         animation-timing-function: ease-in-out
-
+        backface-visibility: hidden                 // не даёт сайд эффектов анимацииям, типа задней стороны фигуры
+        margin-bottom: 65px
+.btn 
+    &:link, &:visited
+        border-radius: 50px
+        display: inline-block
+        text-transform: uppercase
+        text-decoration: none
+        color: #777777
+        padding: 15px 40px
+        background: white
+        transition: all .25s             // ддлительность анимаций при ховере и нажатии
+        &:hover                        
+            transform: translateY(-3px)   // добваляет подъём при ховере
+            box-shadow: (0px 4px 4px rgba(0, 0, 0, .3))
+        &:active
+            transform: translateY(-2px)      // добваляет подъём при наажатии
+            box-shadow: (0px 4px 4px rgba(0, 0, 0, .1))
+        
 @keyframes leftToRight
     0%                                          // настройка анимации
         opacity: 0
