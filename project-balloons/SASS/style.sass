@@ -46,9 +46,37 @@ body
         letter-spacing: 10px
         text-transform: uppercase
         margin-bottom: 10px
+        animation-name: leftToRight                     // применение анимации
+        animation-duration: 2s                      // длительность анимации
+        animation-delay: 0.5s                       // задержка анимации
+        animation-timing-function: ease-in-out
     &__secondary
         display: block
         font-size: 40px
         font-weight: 100
         line-height: normal
         letter-spacing: 5px
+        animation-name: rightToLeft                     // применение анимации
+        animation-duration: 2s                      // длительность анимации
+        animation-delay: 0.5s                        // задержка анима              ции
+        animation-timing-function: ease-in-out
+
+@keyframes leftToRight
+    0%                                          // настройка анимации
+        opacity: 0
+        transform: translateX(-100px)
+    50%
+        transform: translateX(20px)
+    100%
+        opacity: 1
+        transform: translateX(0px)
+
+@keyframes rightToLeft
+    0%                                          // настройка анимации
+        opacity: 0
+        transform: translateX(100px)
+    50%
+        transform: translateX(-20px)
+    100%
+        opacity: 1
+        transform: translateX(0px)
