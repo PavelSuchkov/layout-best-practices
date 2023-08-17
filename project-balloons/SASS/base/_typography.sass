@@ -1,0 +1,35 @@
+body
+    font-family: 'Roboto', sans-serif
+    font-weight: 400
+    color: $color-gray
+    font-size: 1.6rem
+    letter-spacing: .2rem
+
+.title-first
+    color: $color-white
+    &__main
+        display: block
+        color: $color-white
+        font-size: 5rem
+        font-weight: 800
+        line-height: 6rem
+        letter-spacing: 1rem
+        text-transform: uppercase
+        margin-bottom: 1rem
+        animation-name: leftToRight // применение анимации
+        animation-duration: 2s // длительность анимации
+        animation-delay: .5s // задержка анимации
+        animation-timing-function: ease-in-out
+        backface-visibility: hidden // не даёт сайд эффектов анимацииям, типа задней стороны фигуры
+    &__secondary
+        display: block
+        font-size: 4rem
+        font-weight: 100
+        line-height: normal
+        letter-spacing: .5rem
+        animation-name: rightToLeft // применение анимации
+        animation-duration: 2s // длительность анимации
+        animation-delay: .5s // задержка анима ции
+        animation-timing-function: ease-in-out
+        backface-visibility: hidden // не даёт сайд эффектов анимацииям, типа задней стороны фигуры
+        margin-bottom: 6.5rem

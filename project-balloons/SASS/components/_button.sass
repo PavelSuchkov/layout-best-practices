@@ -1,0 +1,35 @@
+
+
+.btn
+    &:link, &:visited
+        @include style-link($color-gray)
+        position: relative
+        border-radius: 5rem
+        padding: 1.5rem 4rem
+        background: white
+        transition: all .25s // ддлительность анимаций при ховере и нажатии
+        font-size: 2rem
+        &:hover
+            transform: translateY(-3px) // добваляет подъём при ховере
+            box-shadow: $box-shadow
+            &::after
+                transform: scaleX(1.45) scaleY(1.9) // добавляет анимацию псевдоэлементу при ховере
+                opacity: 0
+        &:active
+            transform: translateY(-2px) // добваляет подъём при наажатии
+            box-shadow: $box-shadow-active
+    &::after                                                    // псевдоэлемент для анимации взрыва кнопки
+        content: ""
+        background: white
+        width: 100%
+        height: 100%
+        border-radius: 5rem
+        display: inline-block
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+        transition: all .3s // длитеьлность анимации взрыва кнопки
+    &_animated
+        animation: BtnToUp 1s ease-in-out .5s  // название фрейма / продолжительность / функцию времени / делэй
+        animation-fill-mode: backwards // элемент сохраняет стильь первого ключевго кдра на время animation-delay
