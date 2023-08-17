@@ -8,6 +8,13 @@ $color-white: #ffffff
 $box-shadow: (0px 4px 4px rgba($color-black, .3))
 $box-shadow-active: (0px 4px 4px rgba($color-black, .1))
 
+@mixin style-link($color)
+    display: inline-block
+    text-transform: uppercase
+    text-decoration: none
+    color: $color
+    
+
 *, ::after, ::before
     margin: 0
     padding: 0
@@ -77,12 +84,9 @@ body
         margin-bottom: 6.5rem
 .btn
     &:link, &:visited
+        @include style-link($color-gray)
         position: relative
         border-radius: 5rem
-        display: inline-block
-        text-transform: uppercase
-        text-decoration: none
-        color: $color-gray
         padding: 1.5rem 4rem
         background: white
         transition: all .25s // ддлительность анимаций при ховере и нажатии
