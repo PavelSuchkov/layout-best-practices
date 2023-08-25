@@ -1,7 +1,6 @@
 
 .row
     max-width: $grid-width
-    background: #ebb6b677
     margin: 0 auto
     &:not(:last-child)
         margin-bottom: $margin-vertical-big // применяется ко всем чайлдам, кроме последнего
@@ -28,5 +27,4 @@
 [class^="col-"]         // ^ - фильтрация для всех классов, начинающихся на "col-", $ - заканчивающихся, * - включающих в люом меесте
     &:not(:last-child)
         margin-right: $gutter-horizontal
-    background: #4351eb77
     float: left
