@@ -33,3 +33,19 @@ body
         animation-timing-function: ease-in-out
         backface-visibility: hidden // не даёт сайд эффектов анимацииям, типа задней стороны фигуры
         margin-bottom: 6.5rem
+
+
+.title-secondary
+    display: inline-block
+    font-size: 3.6rem
+    letter-spacing: 1rem
+    text-transform: uppercase
+    font-weight: 800
+    background: linear-gradient(90deg, rgba($color-brown-light, 0.7) 0.03%, rgba($color-brown-dark, 0.7) 99.94%)
+    -webkit-background-clip: text    // свойство применяет бэкграунд только к тексту
+    color: transparent               // делает текст прозраччным и открывает видимость этого фона
+    transition: all .4s
+     backface-visibility: hidden     // не даёт сайд эффектов анимацииям, типа дёрганой тени
+    &:hover
+        transform: skewY(2deg) skewX(10deg) scale(1.1)
+        text-shadow: $shadow-h2
