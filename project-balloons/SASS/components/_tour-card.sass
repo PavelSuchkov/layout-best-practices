@@ -1,0 +1,27 @@
+
+.card-tour
+    // background: red
+    position: relative
+    height: 50rem
+    perspective: 250rem
+    -moz-perspective: 150rem
+    &__side
+        height: 50rem
+        transition: .3s all ease-out
+        color: white
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        backface-visibility: hidden
+        &_front
+            background: yellow
+
+        &_back
+            background: green
+            transform: rotateY(180deg)              // по умолчанию добавлен переворот на 180 по игрек оси
+            background: linear-gradient(120deg, rgba($color-brown-light, 0.7) 0.03%, rgba($color-brown-dark, 0.7) 99.94%),
+    &:hover &__side_front
+        transform: rotateY(180deg)
+    &:hover &__side_back
+        transform: rotateY(0deg)
