@@ -51,6 +51,8 @@ body {
 
 .container {
   background-color: #F7F7F7;
+  position: relative;
+  z-index: 0;
 }
 
 body {
@@ -421,6 +423,27 @@ body {
   filter: blur(0.3rem) brightness(0.8);
 }
 
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7), rgba(0, 0, 0, 0.79));
+  z-index: -1;
+}
+
 .header {
   position: relative;
   height: 95vh;
@@ -508,6 +531,7 @@ body {
 }
 
 .section-feedback {
+  position: relative;
   padding-top: 8rem;
   padding-bottom: 5rem;
 }/*# sourceMappingURL=style.css.map */
