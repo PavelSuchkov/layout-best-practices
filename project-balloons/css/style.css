@@ -109,6 +109,9 @@ body {
   transform: skewY(2deg) skewX(10deg) scale(1.1);
   text-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
 }
+.title-secondary_white {
+  color: #ffffff;
+}
 
 .title-third {
   font-size: 2rem;
@@ -368,6 +371,56 @@ body {
   font-weight: 500;
 }
 
+.feedback-card {
+  width: 75%;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  padding: 6rem;
+  transform: skewX(330deg);
+}
+.feedback-card > * {
+  transform: skewX(-330deg);
+}
+.feedback-card_img {
+  width: 15rem;
+  height: 15rem;
+  background: green;
+  float: left;
+  border-radius: 50%;
+  shape-outside: circle(50% at 50% 50%);
+  -webkit-shape-outside: circle(50% at 50% 50%);
+  margin-right: 4rem;
+  overflow: hidden;
+  position: relative;
+}
+.feedback-card_img img {
+  height: 100%;
+  transform: scale(1.2);
+  transition: 0.5s all;
+}
+.feedback-card__name {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  opacity: 0;
+  transition: 0.5s all;
+}
+.feedback-card:hover .feedback-card__name {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+.feedback-card:hover img {
+  transform: scale(1);
+  filter: blur(0.3rem) brightness(0.8);
+}
+
 .header {
   position: relative;
   height: 95vh;
@@ -437,7 +490,7 @@ body {
 
 .section-about {
   padding-top: 8rem;
-  padding-bottom: 8rem;
+  margin-bottom: 14rem;
 }
 
 .section-adventure {
@@ -451,5 +504,10 @@ body {
 }
 
 .section-tour {
-  padding-top: 21rem 0;
+  margin-bottom: 8rem;
+}
+
+.section-feedback {
+  padding-top: 8rem;
+  padding-bottom: 5rem;
 }/*# sourceMappingURL=style.css.map */
