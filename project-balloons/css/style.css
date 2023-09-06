@@ -655,22 +655,24 @@ body {
 }
 .navigation__button {
   background: #ffffff;
-  height: 9rem;
-  width: 9rem;
+  height: 7rem;
+  width: 7rem;
   border-radius: 50%;
   position: fixed;
-  top: 7rem;
-  right: 7rem;
+  top: 10rem;
+  right: 10rem;
   z-index: 70;
+  text-align: center;
+  cursor: pointer;
 }
 .navigation__background {
-  width: 7rem;
-  height: 7rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
   background: radial-gradient(#BA8554, #A14F03);
   position: fixed;
-  right: 8rem;
-  top: 8rem;
+  right: 11rem;
+  top: 11rem;
   z-index: 50;
   transition: all 0.5s;
 }
@@ -681,7 +683,7 @@ body {
   right: 0;
   z-index: 60;
   opacity: 0;
-  transition: all 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  transition: all 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 .navigation__list {
   position: absolute;
@@ -720,6 +722,45 @@ body {
 .navigation__toggle:checked ~ .navigation__nav {
   width: 100%;
   opacity: 1;
+}
+.navigation__icon {
+  position: relative;
+  margin-top: 33px;
+}
+.navigation__icon, .navigation__icon::before, .navigation__icon::after {
+  width: 30px;
+  height: 2px;
+  background: #000000;
+  display: inline-block;
+  transition: all 0.2s;
+}
+.navigation__icon::before, .navigation__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.navigation__icon::before {
+  top: -8px;
+}
+.navigation__icon::after {
+  top: 8px;
+}
+.navigation__button:hover .navigation__icon::before {
+  top: -10px;
+}
+.navigation__button:hover .navigation__icon::after {
+  top: 10px;
+}
+.navigation__toggle:checked + .navigation__button .navigation__icon {
+  background: transparent;
+}
+.navigation__toggle:checked + .navigation__button .navigation__icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+.navigation__toggle:checked + .navigation__button .navigation__icon::after {
+  top: 0;
+  transform: rotate(-135deg);
 }
 
 .section-about {
