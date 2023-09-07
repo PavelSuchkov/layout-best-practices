@@ -8,12 +8,17 @@
     overflow: hidden
 
 .form
-    width: 60%
+    width: 70%
     padding: 5rem
     &__group:not(:last-child)
         margin-bottom: 2rem
     &__group:nth-child(4)         // применяет к 4 чайлду
         margin-bottom: 4rem
+    @include respond(tab-land)
+        &__group:not(:last-child)
+            margin-bottom: 0
+        &__group:nth-child(4)         // применяет к 4 чайлду
+            margin-bottom: 1rem
     &__input
         font-size: $font-size-paraagraph
         letter-spacing: .2rem
@@ -46,8 +51,14 @@
         transform: translateY(-2rem)
 
     &__group-radio
-        width: 45%
+        // width: 45%
         display: inline-block
+        &:not(:last-child)
+            margin-right: 2rem
+        @include respond(tab-land)
+            display: block
+            &:not(:last-child)
+            margin-bottom: 2rem
     &__input-radio
         display: none
     &__label-radio
@@ -79,4 +90,3 @@
 
     &__input-radio:checked ~ &__label-radio &__button-radio::after // выбирает все братские элементы внутри __label-radio внутри, т.е __button-radio::after
         opacity: 1
-        

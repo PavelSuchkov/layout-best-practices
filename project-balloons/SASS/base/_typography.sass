@@ -21,6 +21,8 @@ body
         animation-delay: .5s // задержка анимации
         animation-timing-function: ease-in-out
         backface-visibility: hidden // не даёт сайд эффектов анимацииям, типа задней стороны фигуры
+        @include respond(tab-land)
+            font-size: 4rem
     &__secondary
         display: block
         font-size: 4rem
@@ -33,7 +35,9 @@ body
         animation-timing-function: ease-in-out
         backface-visibility: hidden // не даёт сайд эффектов анимацииям, типа задней стороны фигуры
         margin-bottom: 6.5rem
-
+        @include respond(tab-land)
+            font-size: 3.5rem
+            margin-bottom: 3.5rem
 
 .title-secondary
     display: inline-block
@@ -42,10 +46,12 @@ body
     text-transform: uppercase
     font-weight: 800
     background: linear-gradient(90deg, rgba($color-brown-light, 0.7) 0.03%, rgba($color-brown-dark, 0.7) 99.94%)
-    -webkit-background-clip: text    // свойство применяет бэкграунд только к тексту
-    color: transparent               // делает текст прозраччным и открывает видимость этого фона
+    -webkit-background-clip: text // свойство применяет бэкграунд только к тексту
+    color: transparent // делает текст прозраччным и открывает видимость этого фона
     transition: all .4s
-     backface-visibility: hidden     // не даёт сайд эффектов анимацииям, типа дёрганой тени
+    backface-visibility: hidden // не даёт сайд эффектов анимацииям, типа дёрганой тени
+    @include respond(tab-land)
+        font-size: 3rem
     &:hover
         transform: skewY(2deg) skewX(10deg) scale(1.1)
         text-shadow: $shadow-h2
@@ -56,9 +62,12 @@ body
     font-size: $font-size-h3
     letter-spacing: .2rem
     font-weight: 700
-
+    @include respond(tab-land)
+        font-size: 1.8rem
 .paragraph
     font-size: $font-size-paraagraph
     letter-spacing: .2rem
     line-height: 140%
     font-weight: 400
+    @include respond(tab-land)
+        font-size: 1.5rem

@@ -9,6 +9,9 @@
         transition: all .25s // ддлительность анимаций при ховере и нажатии
         font-size: 2rem
         border: none
+        @include respond(tab-land)
+            font-size: 1.8rem
+            padding: 1.5rem 3.7rem
         &:hover
             transform: translateY(-3px) // добваляет подъём при ховере
             box-shadow: $box-shadow
